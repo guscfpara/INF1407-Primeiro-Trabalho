@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath trab1_app trab1_app.wsgi
