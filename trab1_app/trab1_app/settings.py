@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-4(m7*#@3agk@h2sz5cpdy!0lnuk$%dzf!wy+53s*!^=)8b5)qk
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'inf1407-primeiro-trabalho.herokuapp.com',
+    'https://inf1407-primeiro-trabalho.herokuapp.com',
     'localhost'
 ]
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trab1_app'
 ]
 
 MIDDLEWARE = [
