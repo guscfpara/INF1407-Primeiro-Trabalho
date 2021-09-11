@@ -1,7 +1,7 @@
 import threading
 from socket import socket, AF_INET, SOCK_STREAM
 from configs import web_server_config
-from web_server import client
+from web_client import client_service
 
 if __name__ == '__main__':
     # Server Port
@@ -18,5 +18,5 @@ if __name__ == '__main__':
     while True:
         # When receiving a connection, returns a socket with client, server and client address, creating a Thread
         connection, client = tcp_socket.accept()
-        new_thread = threading.Thread(group=None, target=client, args=(connection, client, web_server_config))
+        new_thread = threading.Thread(group=None, target=client_service, args=(connection, client, web_server_config))
         new_thread.start()
