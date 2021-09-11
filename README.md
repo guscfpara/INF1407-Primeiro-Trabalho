@@ -4,13 +4,9 @@
 O que foi implementado :
 
 - Implemente o método GET.
-- Comente o seu código. Eu preciso entender o código para pontuar o seu trabalho.
-- Permita a conexão de mais de um cliente simultaneamente. Como sugestão, inclua dentro do servidor
-um delay para testar conexões simultâneas (eu vou fazer isso para testar o seu trabalho).
-- Emita mensagens de erro ao tentar executar o seu trabalho e houver alguma inconsistência no arquivo de
-configuração (ver descrição de arquivo de configuração abaixo).
-- Comente, no arquivo de configuração exemplo, como configurar o seu trabalho. Inclua algumas
-sugestões nos comentários.
+- Permita a conexão de mais de um cliente simultaneamente. Como sugestão, inclua dentro do servidor um delay para testar conexões simultâneas (eu vou fazer isso para testar o seu trabalho).
+- Emita mensagens de erro ao tentar executar o seu trabalho e houver alguma inconsistência no arquivo de configuração (ver descrição de arquivo de configuração abaixo).
+- Comente, no arquivo de configuração exemplo, como configurar o seu trabalho. Inclua algumas sugestões nos comentários.
 - O seu servidor deverá servir arquivos HTML, JS, JPEG (JPG), PNG e GIF.
 - No caso de recurso inexistente (página não encontrada), exibir código de erro 404
 
