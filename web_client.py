@@ -3,7 +3,7 @@ import platform
 
 from time import gmtime, strftime
 
-def client_request(connection, client, config):
+def client(connection, client, config):
     # Receive message received from socket
     message = connection.recv(client[1])
     message = message.decode(config['code'])
