@@ -1,11 +1,7 @@
-import threading
 import mimetypes
 import platform
 
 from time import gmtime, strftime
-from socket import socket, AF_INET, SOCK_STREAM
-
-from configs import web_server_config
 
 def client_request(connection, client, config):
     # Receive message received from socket
@@ -44,10 +40,10 @@ def client_request(connection, client, config):
             # If the file is not found, look in the list of default files or send to 404
             flag = False
             # Compare the files that are in the list
-            for file in web_server_config['defaults_files']:
+            for file in config['defaults_files']:
                 archive_path = archive_path.split('/')[-1]
                 if archive_path in file and archive_path != '':
-                    file = '{0}/{1}'.format(web_server_config['local_dir'],file)
+                    file = '{0}/{1}'.format(config['local_dir'],file)
                     flag = True
                     break
             # If you find it on the list, send it to 200
@@ -106,21 +102,3 @@ def client_request(connection, client, config):
     print('Body : ', body)
 
     connection.close()
-
-if __name__ == '__main__':
-    # Server Port
-    server_port = web_server_config['port']
-
-    # Create a clientless server socket
-    tcp_socket = socket(AF_INET, SOCK_STREAM)
-    tcp_socket.bind(('', int(server_port)))
-    tcp_socket.listen(0)
-
-    print(f'Access url : http://localhost:{server_port}')
-
-    # Program waits for a connection
-    while True:
-        # When receiving a connection, returns a socket with client, server and client address, creating a Thread
-        connection, client = tcp_socket.accept()
-        new_thread = threading.Thread(group=None, target=client_request, args=(connection, client, web_server_config))
-        new_thread.start()
